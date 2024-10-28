@@ -46,7 +46,10 @@ Expected output:
 What's my name (1:40)
 */
 
-console.log("\nSixth song:");
+const sixthSong = album.tracklist[5];
+console.log(`${sixthSong.title} (${sixthSong.duration})`);
+console.log("");
+
 
 /*
 Task 2
@@ -57,8 +60,9 @@ Looking at the `credits` property, print the name and instruments
 Expected output:
 Joe Strummer: Guitar, Vocals
 */
-console.log("\nFirst musician:");
-
+const firstMusician = album.credits[0];
+console.log(`${firstMusician.name}: ${firstMusician.instruments.join(", ")}`);
+console.log("");
 
 /*
 Task 3
@@ -81,7 +85,11 @@ Expected output:
 11. Garageland
 */
 
-console.log("\nTracklist:");
+for (let i = 0; i < album.tracklist.length; i++) {
+  console.log(`${i + 1}. ${album.tracklist[i].title}`);
+}
+
+console.log("");
 
 /*
 Task 4
@@ -96,5 +104,8 @@ Mick Jones: Guitar, Vocals
 Paul Simonon: Bass Guitar
 Tory Crimes: Drums
 */
+for (let i = 0; i < album.credits.length; i++) {
+  console.log(`${album.credits[i].name}: ${album.credits[i].instruments.join(", ")}`);
+}
 
-console.log("\nBand members:");
+console.log("");
